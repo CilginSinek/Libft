@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "libft.h"
 
 int main(){
@@ -23,8 +24,14 @@ int main(){
     printf("After memset: %s \n", str);
     int n[5] = {1, 2, 3, 4, 5};
     printf("Before memset: %d %d %d %d %d \n", n[0], n[1], n[2], n[3], n[4]);
-    ft_memset(n, 0, sizeof(n)-4);
+    ft_memset(n, 0, 3*sizeof(n[0]));
     printf("After memset: %d %d %d %d %d \n", n[0], n[1], n[2], n[3], n[4]);
+
+    int t[5] = {1, 2, 3, 4, 5};
+    printf("Before memset: %d %d %d %d %d \n", t[0], t[1], t[2], t[3], t[4]);
+    memset(t, 0, 3*sizeof(t[0]));
+    printf("After memset: %d %d %d %d %d \n", t[0], t[1], t[2], t[3], t[4]);
+
     //bzero
     char str1[50] = "Hello World";
     printf("Before bzero: %s \n", str1);
