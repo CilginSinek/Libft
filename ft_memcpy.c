@@ -29,7 +29,7 @@ Output:
     void* : This function returns a pointer to the memory location
     where data is copied.
 */
-void	*ft_memcpy(void *dest, const void *src, unsigned int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
 	unsigned char	*s;

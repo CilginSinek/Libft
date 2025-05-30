@@ -15,14 +15,14 @@
 /*
 The bzero() function erases the data in the n bytes of the memory
 starting at the location pointed to by s, by writing zeros (bytes
-containing '\0') to that area.
+containing NULL) to that area.
 Input:
     *ptr:void -> Pointer to the block of memory to fill.
-    n: unsingned int -> Number of bytes to be set to the value.
+    n: size_t -> Number of bytes to be set to the value.
 Output:
     void returned.
 */
-void	ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*src;
 
