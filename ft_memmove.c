@@ -19,7 +19,7 @@ void	ft_memmove_helper(char *d, char *s, size_t n)
 
 	lastd = d + (n - 1);
 	lasts = s + (n - 1);
-	while (n--)
+	while (n-- && *lasts)
 		*lastd-- = *lasts--;
 }
 
@@ -45,7 +45,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	s = (char *)src;
 	if (d < s)
 	{
-		while (n--)
+		while (n-- && *s)
 			*d++ = *s++;
 	}
 	else
