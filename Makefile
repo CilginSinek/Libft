@@ -1,6 +1,6 @@
 NAME = libft.a
 FLAG = -Wall -Wextra -Werror
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c
+SRC = $(shell find . -name "ft_*.c")
 BONUS = $(shell find . -name "ft_lst*.c")
 CC = cc
 OBJ = $(SRC:.c=.o)

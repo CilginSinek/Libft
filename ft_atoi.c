@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 14:50:31 by iduman            #+#    #+#             */
-/*   Updated: 2025/05/29 15:13:07 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/01 18:05:00 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ and yields an integer value in return.
 Input: *char
 Output: int
 */
-int	ft_atoi(char *c)
+int	ft_atoi(const char *str)
 {
 	int	l;
 	int	a;
@@ -31,18 +31,18 @@ int	ft_atoi(char *c)
 	int	n;
 
 	t = 0;
-	l = ft_strlen(c);
-	if ((c[0] == '+') || (c[0] == '-'))
+	l = ft_strlen(str);
+	if ((str[0] == '+') || (str[0] == '-'))
 	{
-		if (c[0] == '-')
+		if (str[0] == '-')
 			a = -1;
 		t = 1;
 	}
 	while (t < l)
 	{
-		if (c[t] >= '0' && c[t] <= '9')
+		if (str[t] >= '0' && str[t] <= '9')
 		{
-			i = c[t] - 48;
+			i = str[t] - 48;
 			n = n * 10 + i;
 		}
 		else

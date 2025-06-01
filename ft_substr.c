@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/01 14:51:43 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 18:06:46 by iduman           ###   ########.fr       */
+/*   Created: 2025/06/01 17:11:44 by iduman            #+#    #+#             */
+/*   Updated: 2025/06/01 17:32:51 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_memcmp(const void *dest, const void *src, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	const unsigned char	*p1;
-	const unsigned char	*p2;
+	char	*str;
 
-	p1 = (const unsigned char *)dest;
-	p2 = (const unsigned char *)src;
-	while (n-- && *p1 && *p2)
+	if (start == 0)
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
-		p1++;
-		p2++;
+		str = (char *)malloc(len);
+		if (!str)
+			return ((char *) NULL);
+		ft_memcpy(str, s, len);
+		return (str);
 	}
-	return (0);
+	str = (char *)malloc(len - start + 1);
+	if (!str)
+		return ((char *) NULL);
+	ft_memcpy(str, s + start, len - start);
+	str[len - start + 1] = '\0';
+	return (str);
 }
