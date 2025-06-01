@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/01 15:09:58 by iduman            #+#    #+#             */
+/*   Updated: 2025/06/01 15:09:59 by iduman           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 /*
@@ -14,19 +26,19 @@ Input:
 Output:
     size_t: The total length of the string copied.
 */
-size_t ft_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    if(size)
-    {
-        while (src[i] && i < size - 1)
-        {
-            dest[i] = src[i];
-            i++;
-        }
-        dest[i] = '\0';
-    }
-    return (ft_strlen(src));
+	i = 0;
+	if (size)
+	{
+		while (src[i] && i < size - 1)
+		{
+			dest[i] = src[i];
+			i++;
+		}
+		dest[i] = '\0';
+	}
+	return (ft_strlen(src));
 }

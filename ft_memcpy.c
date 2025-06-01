@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:26:07 by iduman            #+#    #+#             */
-/*   Updated: 2025/05/29 13:46:08 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/01 15:09:42 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Output:
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;
-	unsigned char	*s;
+	unsigned char		*s;
 
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
