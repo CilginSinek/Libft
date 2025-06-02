@@ -14,7 +14,7 @@ jobs:
       TERM: xterm
 
     steps:
-      # 1. Repoyu checkout et
+      # 1. Reponu checkout et
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -31,14 +31,13 @@ jobs:
           pip3 install gitpython halo toml
 
       # 4. Francinette deposunu /tmp/francinette içine klonla
-      #    Böylece proje kökü ile francinette klasörü karışmayacak ve "maximum recursion depth" sorunu ortadan kalkacak.
       - name: Clone francinette outside workspace
         run: |
           git clone https://github.com/xicodomingues/francinette.git /tmp/francinette
 
-      # 5. Francinette’i, proje kökünü (--exercise) belirterek çalıştır
-      #    Bu sayede, francinette kendi dizini dışında ("/tmp/francinette") çalışacak, 
-      #    test edilecek dosyaları ise doğrudan repo kökünden okuyacak. 
+      # 5. CWD olarak proje kökünü ayarla ve Francinette’i çalıştır
+      #    Bu sayede, “Use francinette or paco inside a project folder to run it” kuralına uyuyoruz.
       - name: Run francinette tests
+        working-directory: ${{ github.workspace }}
         run: |
-          python3 /tmp/francinette/main.py --exercise "${{ github.workspace }}"
+          python3 /tmp/francinette/main.py
