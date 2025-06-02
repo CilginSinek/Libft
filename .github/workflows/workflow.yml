@@ -14,6 +14,9 @@ jobs:
     name: Run libftTester
     runs-on: ubuntu-latest
 
+    env:
+      TERM: xterm
+
     steps:
       # 1. Reponu checkout et
       - name: Checkout repository
