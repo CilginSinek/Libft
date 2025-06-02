@@ -4,9 +4,6 @@ name: Libft Tester
 
 # Workflow, "main" dalına push edildiğinde ve manuel tetiki (workflow_dispatch) durumunda çalışacak
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 jobs:
