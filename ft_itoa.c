@@ -22,8 +22,8 @@ char	set_amblem(int n)
 
 int	counter(int n)
 {
-	int c;
-	char a;
+	int		c;
+	char	a;
 
 	a = set_amblem(n);
 	c = 0;
@@ -51,10 +51,10 @@ Output:
 */
 char	*ft_itoa(int n)
 {
-	char *str;
-	char a;
-	int len;
-	char tmp;
+	char	*str;
+	char	a;
+	int		len;
+	char	tmp;
 
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -63,7 +63,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return ((char *) NULL);
-	str[len+1] = '\0';
+	str[len + 1] = '\0';
 	while (n)
 	{
 		tmp = n % 10 + '0';
@@ -71,8 +71,7 @@ char	*ft_itoa(int n)
 		n = n / 10;
 		len--;
 	}
-	if(a == '-')
+	if (a == '-')
 		str[0] = '-';
-
 	return (str);
 }

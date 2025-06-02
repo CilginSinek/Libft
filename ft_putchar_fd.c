@@ -21,8 +21,9 @@ Input:
 Output:
 	None. The function writes the character to the specified file descriptor.
 */
-void ft_putchar_fd(char c, int fd) {
-	if (!c || fd < 0)
-		return;
+void	ft_putchar_fd(char c, int fd)
+{
+	if (fd < 0)
+		return ;
 	write(fd, &c, 1);
 }

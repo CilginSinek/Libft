@@ -22,7 +22,7 @@ Output:
     char*: Pointer to the newly allocated trimmed string,
     or NULL if the allocation fails or if s1 or set is NULL.
 */
-char *ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*start;
 	char	*end;

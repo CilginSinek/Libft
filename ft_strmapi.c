@@ -28,19 +28,19 @@ Output:
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*nstr;
-	int	i;
+	int		i;
 
-	if(!s || !f)
+	if (!s || !f)
 		return ((char *) NULL);
 	nstr = (char *)malloc(ft_strlen(s) + 1);
-	if(!nstr)
+	if (!nstr)
 		return ((char *) NULL);
 	i = 0;
-	while(i < ft_strlen(s))
-    {
-        nstr[i] = f(i,s[i]);
-        i++;
-    }
+	while (i < ft_strlen(s))
+	{
+		nstr[i] = f(i, s[i]);
+		i++;
+	}
 	nstr[i] = '\0';
 	return (nstr);
 }

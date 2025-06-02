@@ -20,9 +20,9 @@ Input:
 Output:
     None. The function writes the integer to the specified file descriptor.
 */
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char *str;
+	char	*str;
 
 	if (fd < 0)
 		return ;
