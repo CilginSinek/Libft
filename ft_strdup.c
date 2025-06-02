@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/*
+The ft_strdup function allocates memory for a new string
+and copies the content of the string pointed to
+by str into the newly allocated memory.
+If the allocation fails, it returns NULL.
+Input:
+	const char *str: Pointer to the string to be duplicated.
+Output:
+	char*: Pointer to the newly allocated string containing a copy of str,
+	or NULL if the allocation fails.
+*/
 char	*ft_strdup(const char *str)
 {
 	char	*nstr;

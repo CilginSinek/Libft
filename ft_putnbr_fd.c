@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/27 16:17:41 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 17:57:23 by iduman           ###   ########.fr       */
+/*   Created: 2025/06/02 19:45:16 by iduman            #+#    #+#             */
+/*   Updated: 2025/06/02 19:45:16 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
-The ft_strlen function calculates the length of a string by iterating through
-the characters until it reaches the null terminator ('\0').
+Outputs the integer ’n’ to the specified file descriptor.
 Input:
-	char const *s: Pointer to the string whose length is to be calculated.
+    int n: The integer to output.
+    int fd: The file descriptor to which the integer will be written.
 Output:
-	size_t: The length of the string, excluding the null terminator.
+    None. The function writes the integer to the specified file descriptor.
 */
-size_t	ft_strlen(const char *s)
+void ft_putnbr_fd(int n, int fd)
 {
-	size_t	c;
+	char *str;
 
-	c = 0;
-	while (*s++)
-		c++;
-	return (c);
+	if (fd < 0)
+		return ;
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	else
+	{
+		str = ft_itoa(n);
+		if (!str)
+			return ;
+		ft_putstr_fd(str, fd);
+		free(str);
+	}
 }

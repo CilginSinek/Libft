@@ -12,6 +12,19 @@
 
 #include "libft.h"
 
+/*
+The ft_memcmp function compares the first n bytes of the memory areas
+pointed to by dest and src. It returns an integer less than, equal to,
+or greater than zero if the first n bytes of dest is found, respectively,
+to be less than, to match, or be greater than the first n bytes of src.
+If n is zero, the function returns zero.
+Input:
+	const void *dest: Pointer to the first memory area.
+	const void *src: Pointer to the second memory area.
+	size_t n: Number of bytes to compare.
+Output:
+	int: Result of the comparison.
+*/
 size_t	ft_memcmp(const void *dest, const void *src, size_t n)
 {
 	const unsigned char	*p1;
