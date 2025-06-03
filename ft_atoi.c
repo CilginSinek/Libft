@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 14:50:31 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 18:05:00 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/03 18:48:09 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_atoi(const char *str)
 
 	t = 0;
 	l = ft_strlen(str);
-	if ((str[0] == '+') || (str[0] == '-'))
+	if ((str[0] == '+') || (str[0] == '-'))// burası düzeltilicek 7-13 arasındakiler atlanıyor
 	{
 		if (str[0] == '-')
 			a = -1;

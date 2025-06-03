@@ -6,13 +6,13 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:45:23 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/02 19:45:23 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/03 18:29:07 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_counter(char const *s, char c)
+static size_t	word_counter(char const *s, char c)
 {
 	size_t		count;
 	signed char	in_word;
@@ -33,7 +33,7 @@ size_t	word_counter(char const *s, char c)
 	return (count);
 }
 
-int	check_memory(char **result, size_t word)
+static int	check_memory(char **result, size_t word)
 {
 	if (!result[word])
 	{
@@ -45,7 +45,7 @@ int	check_memory(char **result, size_t word)
 	return (0);
 }
 
-char	**setter(char **result, const char *s, char c)
+static char	**setter(char **result, const char *s, char c)
 {
 	size_t	i;
 	size_t	word;

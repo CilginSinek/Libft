@@ -6,13 +6,13 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:45:01 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/02 19:45:01 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/03 18:28:10 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	set_amblem(int n)
+static char	set_amblem(int n)
 {
 	if (n > 0)
 		return ('+');
@@ -20,7 +20,7 @@ char	set_amblem(int n)
 		return ('-');
 }
 
-int	counter(int n)
+static int	counter(int n)
 {
 	int		c;
 	char	a;

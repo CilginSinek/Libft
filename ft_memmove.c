@@ -6,13 +6,13 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 18:22:17 by iduman            #+#    #+#             */
-/*   Updated: 2025/05/29 13:49:12 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/03 18:28:46 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memmove_helper(char *d, char *s, size_t n)
+static void	ft_memmove_helper(char *d, char *s, size_t n)
 {
 	char	*lasts;
 	char	*lastd;
