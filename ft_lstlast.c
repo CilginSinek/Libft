@@ -14,10 +14,10 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	new_list;
+	t_list	*new_list;
 
-	new_list = *lst;
-	if (new_list.next != NULL)
-		return (ft_lstlast(new_list.next));
-	return (&new_list);
+	new_list = lst;
+	if (new_list->next != NULL)
+		return (ft_lstlast(new_list->next));
+	return (new_list);
 }
