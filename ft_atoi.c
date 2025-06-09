@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+int	strlenspc(const char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len] == ' ' || (str[len] > 6 && str[len] < 14))
+		len++;
+	return (len);
+}
+
 /*
 In C, atoi stands for ASCII To Integer.
 The ft_atoi() is a library function in C that converts
@@ -24,29 +34,23 @@ Output: int
 */
 int	ft_atoi(const char *str)
 {
-	int	l;
-	int	a;
-	int	t;
-	int	i;
-	int	n;
+	int			result;
+	int			i;
+	signed char	a;
 
-	t = 0;
-	l = ft_strlen(str);
-	if ((str[0] == '+') || (str[0] == '-'))// burası düzeltilicek 7-13 arasındakiler atlanıyor
+	result = 0;
+	i = 0 + strlenspc(str);
+	a = 1;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (str[0] == '-')
+		if (str[i] == '-')
 			a = -1;
-		t = 1;
+		i++;
 	}
-	while (t < l)
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		if (str[t] >= '0' && str[t] <= '9')
-		{
-			i = str[t] - 48;
-			n = n * 10 + i;
-		}
-		else
-			return (n * a);
+		result = result * 10 + (str[i] - '0');
+		i++;
 	}
-	return (n * a);
+	return (result * a);
 }

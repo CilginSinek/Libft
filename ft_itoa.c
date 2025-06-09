@@ -37,6 +37,17 @@ static int	counter(int n)
 	return (c);
 }
 
+static char	get_last_digit(int n)
+{
+	unsigned int	num;
+
+	if (n < 0)
+		num = -n;
+	else
+		num = n;
+	return (num % 10 + '0');
+}
+
 /*
 The ft_itoa function converts an integer n into a string representation.
 It handles both positive and negative integers,
@@ -66,7 +77,7 @@ char	*ft_itoa(int n)
 	str[len + 1] = '\0';
 	while (n)
 	{
-		tmp = n % 10 + '0';
+		tmp = get_last_digit(n);
 		str[len] = tmp;
 		n = n / 10;
 		len--;
