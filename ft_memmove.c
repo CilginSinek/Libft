@@ -12,22 +12,10 @@
 
 #include "libft.h"
 
-static void	ft_memmove_helper(char *d, char *s, size_t n)
-{
-	char	*lasts;
-	char	*lastd;
-
-	lastd = d + (n - 1);
-	lasts = s + (n - 1);
-	while (n-- && *lasts)
-		*lastd-- = *lasts--;
-}
-
 /*
 ft_memmove is a function that copies n bytes from the memory area
 pointed to by src to the memory area pointed to by dest,
 handling overlapping memory regions safely.
-It uses a helper function, ft_memmove_helper,
 for cases where the destination pointer is greater than the source pointer.
 Input:
 	void *dest: A pointer to the destination memory area.
@@ -38,17 +26,12 @@ Output:
 */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	char		*s;
-
-	d = (char *)dest;
-	s = (char *)src;
-	if (d < s)
-	{
-		while (n-- && *s)
-			*d++ = *s++;
-	}
+	if (!dest && !src)
+		return (dest);
+	if (dest < src)
+		ft_memcpy(dest, src, n);
 	else
-		ft_memmove_helper(d, s, n);
+		while (n--)
+			((unsigned char *)dest)[n] = ((const unsigned char *)src)[n];
 	return (dest);
 }

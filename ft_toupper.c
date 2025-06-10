@@ -24,6 +24,6 @@ Output: int as ascii
 int	ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
-		return (c - 20);
+		return (c - 32);
 	return (c);
 }

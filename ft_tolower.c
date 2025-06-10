@@ -24,6 +24,6 @@ Output: int as ascii
 int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
-		return (c + 20);
+		return (c + 32);
 	return (c);
 }
