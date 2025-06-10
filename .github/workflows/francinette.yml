@@ -37,9 +37,6 @@ jobs:
       - name: Add pip local bin to PATH
         run: echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: where i am
-        run: pwdir
-
       # 5. Francinette
       - name: Clone francinette outside workspace
         run: |
