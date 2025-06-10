@@ -34,6 +34,8 @@ char	*ft_strdup(const char *str)
 	nstr = (char *)malloc(len + 1);
 	if (!nstr)
 		return ((char *) NULL);
-	ft_memcpy(nstr, str, len);
+	while (*str)
+		*nstr++ = *str++;
+	*nstr = '\0';
 	return (nstr);
 }

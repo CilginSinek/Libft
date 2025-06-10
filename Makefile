@@ -4,6 +4,7 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c
 CC = cc
 OBJ = $(SRC:.c=.o)
+BONUSOBJ = $(BONUS:.c=.o)
 
 
 all: $(NAME)
@@ -12,11 +13,11 @@ $(NAME):$(OBJ)
 	$(CC) $(FLAG) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 
-bonus:
-	gcc $(FLAG) -c $(BONUS)
-	ar rcs $(NAME) $(OBJ)
+bonus:$(OBJ) $(BONUSOBJ)
+	$(CC) $(FLAG) -c $(BONUS)
+	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
 clean:
-	/bin/rm -f  $(OBJ)
+	/bin/rm -f  $(OBJ) $(BONUSOBJ)
 fclean: clean
 	/bin/rm -f $(NAME) 
 re: fclean all
