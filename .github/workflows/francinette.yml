@@ -47,4 +47,4 @@ jobs:
       - name: Run francinette tests
         working-directory: ${{ github.workspace }}
         run: |
-          python3 /tmp/francinette/main.py
+          francinette
