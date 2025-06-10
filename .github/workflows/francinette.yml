@@ -44,11 +44,11 @@ jobs:
 
       # 5.1 Add Francinette bin to PATH
       - name: Add Francinette bin to PATH
-        run: echo "$HOME/.francinette" >> $GITHUB_PATH
+        run: echo "$HOME/francinette" >> $GITHUB_PATH
 
       # 6. Çalışma dizinini repo köküne (github.workspace) ayarla ve Francinette'i çalıştır
       #    Bu sayede "Use francinette or paco inside a project folder to run it" kuralına uyuyoruz.
       - name: Run francinette tests
         working-directory: ${{ github.workspace }}
         run: |
-          $HOME/.francinette/tester.sh
+          $HOME/francinette/tester.sh
