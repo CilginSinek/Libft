@@ -42,6 +42,10 @@ jobs:
         run: |
           bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
 
+      # 5.1 Add Francinette bin to PATH
+      - name: Add Francinette bin to PATH
+        run: echo "$HOME/.bin" >> $GITHUB_PATH
+
       # 6. Çalışma dizinini repo köküne (github.workspace) ayarla ve Francinette’i çalıştır
       #    Bu sayede “Use francinette or paco inside a project folder to run it” kuralına uyuyoruz.
       - name: Run francinette tests
