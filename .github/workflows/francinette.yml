@@ -40,15 +40,15 @@ jobs:
       # 5. Francinette
       - name: Clone francinette outside workspace
         run: |
-          git clone https://github.com/xicodomingues/francinette.git $HOME/francinette
+          bash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/install.sh)"
 
       # 5.1 Add Francinette bin to PATH
       - name: Add Francinette bin to PATH
-        run: echo "$HOME/francinette" >> $GITHUB_PATH
+        run: echo "$HOME/.francinette" >> $GITHUB_PATH
 
       # 6. Çalışma dizinini repo köküne (github.workspace) ayarla ve Francinette'i çalıştır
       #    Bu sayede "Use francinette or paco inside a project folder to run it" kuralına uyuyoruz.
       - name: Run francinette tests
         working-directory: ${{ github.workspace }}
         run: |
-          $HOME/francinette/tester.sh
+          $HOME/.francinette/tester.sh
