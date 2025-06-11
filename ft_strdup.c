@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:37:40 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/11 16:25:04 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 16:51:47 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strdup(const char *str)
 
 	if (!str)
 		return ((char *) NULL);
-	nstr = (char *)malloc(sizeof(char) * sizeof(str));
+	nstr = (char *)malloc(sizeof(char) * ft_strlen(str));
 	if (!nstr)
 		return ((char *) NULL);
 	i = 0;
