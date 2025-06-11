@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/27 17:26:07 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 15:09:42 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 14:20:04 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,15 @@ Output:
 */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
+	size_t	i;
+
+	i = 0;
 	if (!dest && !src)
 		return (NULL);
-	while (n--)
-		((unsigned char *)dest)[n] = ((const unsigned char *)src)[n];
+	while (i < n)
+	{
+		((unsigned char *)dest)[i] = ((const unsigned char *)src)[i];
+		i++;
+	}
 	return (dest);
 }
