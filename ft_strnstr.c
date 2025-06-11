@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 14:52:10 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 15:02:40 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 15:22:25 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	while (big[i] && i < len)
 	{
 		j = 0;
-		while (i + j < len && big[i + j] == little[j])
+		while ((i + j < len) && (big[i + j] == little[j]))
 		{
-			if (little[j] == '\0')
+			if (!little[j + 1])
 				return ((char *)(big + i));
 			j++;
 		}
