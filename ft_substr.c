@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:11:44 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/11 18:05:28 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 18:18:33 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (start == 0)
 	{
-		str = (char *)malloc(len);
+		str = (char *)malloc(len + 1);
 		if (!str)
 			return ((char *) NULL);
-		ft_memcpy(str, s, len);
+		ft_memcpy(str, s, len + 1);
 		return (str);
 	}
-	str = (char *)malloc(len - start);
+	str = (char *)malloc(len - start + 1);
 	if (!str)
 		return ((char *) NULL);
-	ft_memcpy(str, s + start, len);
+	ft_memcpy(str, s + start, len + 1);
 	str[len + 1] = '\0';
 	return (str);
 }
