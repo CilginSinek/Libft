@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:37:40 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/11 14:18:30 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 16:25:04 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ char	*ft_strdup(const char *str)
 		return ((char *) NULL);
 	i = 0;
 	while (str[i] != '\0')
+	{
 		nstr[i] = str[i];
+		i++;
+	}
 	nstr[i] = '\0';
 	return (nstr);
 }

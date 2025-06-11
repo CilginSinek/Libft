@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 15:26:28 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/01 17:07:07 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/11 16:09:22 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	void	*ptr;
 
 	ptr = malloc(nmemb * size);
-	if (!ptr)
+	if (ptr == NULL)
 	{
 		return (NULL);
 	}
