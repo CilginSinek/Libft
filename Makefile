@@ -14,7 +14,7 @@ $(NAME):$(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus:$(OBJ) $(BONUSOBJ)
-	$(CC) $(FLAG) -c $(BONUS)
+	$(CC) $(FLAG) -c $(SRC) $(BONUS)
 	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
 clean:
 	/bin/rm -f  $(OBJ) $(BONUSOBJ)
