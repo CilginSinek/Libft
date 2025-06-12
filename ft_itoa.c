@@ -17,13 +17,13 @@ static int	counter(int n)
 	int		c;
 
 	c = 0;
+	if (n < 0)
+		c++;
 	while (n)
 	{
 		n /= 10;
 		c++;
 	}
-	if (n < 0)
-		c++;
 	return (c);
 }
 
