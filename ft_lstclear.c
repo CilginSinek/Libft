@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 13:36:20 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/10 13:53:17 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:00:57 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		del(mylist->content);
 		if (mylist->next == NULL)
 			return ;
+		mylist = mylist->next;
 	}
 }

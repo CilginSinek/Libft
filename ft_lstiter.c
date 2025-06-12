@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 13:46:04 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/10 13:53:02 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:02:47 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,14 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	t_list	*mylst;
+
+	mylst = lst;
 	while (1)
 	{
-		f(lst->content);
-		if (lst->next == NULL)
+		f(mylst->content);
+		if (mylst->next == NULL)
 			return ;
+		mylst = mylst->next;
 	}
 }
