@@ -26,15 +26,16 @@ Output:
 */
 char	*ft_strrchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
-	s += ft_strlen(s);
-	while (1)
+	char	*last;
+
+	last = NULL;
+	while (*s)
 	{
 		if ((unsigned char)*s == (unsigned char)c)
-			return ((char *)s);
-		if (*s == '\0')
-			return (NULL);
-		s--;
+			last = (char *)s;
+		s++;
 	}
+	if ((unsigned char)c == '\0')
+		return ((char *)s);
+	return (last);
 }
