@@ -36,11 +36,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	new_len = ft_strlen(s) - start;
-	if (len < new_len)
-		new_len = len;
-	if (start > ft_strlen(s) - 1)
+	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
+	new_len = ft_strlen(s) - start;
+	if (new_len > len)
+		new_len = len;
 	str = (char *)malloc(sizeof(char) * (new_len + 1));
 	if (!str)
 		return (NULL);
