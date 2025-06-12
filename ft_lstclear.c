@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/10 13:36:20 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/12 16:17:49 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 16:32:41 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list		*mylist;
 	t_list		tmp;
 
+	if(!lst)
+		return ;
 	mylist = *lst;
 	while (1)
 	{
 		del(mylist->content);
 		tmp = *mylist;
 		free(mylist);
-		if (tmp.next == NULL)
+		if (!tmp.next)
 			return ;
 		mylist = tmp.next;
 	}
