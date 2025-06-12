@@ -26,7 +26,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		del(mylist->content);
 		free(mylist);
 		if (!tmp.next)
+		{
+			*lst = NULL;
 			return ;
+		}
 		mylist = tmp.next;
 	}
 }
