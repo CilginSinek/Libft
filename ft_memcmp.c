@@ -25,7 +25,7 @@ Input:
 Output:
 	int: Result of the comparison.
 */
-size_t	ft_memcmp(const void *dest, const void *src, size_t n)
+int	ft_memcmp(const void *dest, const void *src, size_t n)
 {
 	unsigned char	*p1;
 	unsigned char	*p2;
