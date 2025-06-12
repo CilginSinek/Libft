@@ -12,40 +12,19 @@
 
 #include "libft.h"
 
-static char	set_amblem(int n)
-{
-	if (n > 0)
-		return ('+');
-	else
-		return ('-');
-}
-
 static int	counter(int n)
 {
 	int		c;
-	char	a;
 
-	a = set_amblem(n);
 	c = 0;
 	while (n)
 	{
 		n /= 10;
 		c++;
 	}
-	if (a == '-')
-		return (c + 1);
-	return (c);
-}
-
-static char	get_last_digit(int n)
-{
-	unsigned int	num;
-
 	if (n < 0)
-		num = -n;
-	else
-		num = n;
-	return (num % 10 + '0');
+		c++;
+	return (c);
 }
 
 /*
@@ -62,27 +41,27 @@ Output:
 */
 char	*ft_itoa(int n)
 {
-	char	*str;
-	char	a;
-	int		len;
-	char	tmp;
+	char			*str;
+	int				len;
+	unsigned int	num;
 
 	if (n == 0)
 		return (ft_strdup("0"));
-	a = set_amblem(n);
 	len = counter(n);
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
-		return ((char *) NULL);
-	str[--len] = '\0';
-	while (n)
+		return (NULL);
+	str[len] = '\0';
+	if (n < 0)
+		num = -n;
+	else
+		num = n;
+	while (num)
 	{
-		tmp = get_last_digit(n);
-		str[len] = tmp;
-		n = n / 10;
-		len--;
+		str[--len] = (num % 10) + '0';
+		num /= 10;
 	}
-	if (a == '-')
+	if (n < 0)
 		str[0] = '-';
 	return (str);
 }
