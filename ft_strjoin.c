@@ -6,11 +6,12 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:45:39 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/02 19:45:39 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:12:48 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 /*
 The ft_strjoin function concatenates two strings s1 and s2 into a new string.
@@ -28,12 +29,24 @@ Output:
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*nstr;
+	size_t	len1;
 
 	nstr = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!nstr)
 		return ((char *) NULL);
-	ft_strlcat(nstr, s1, ft_strlen(s1) + ft_strlen(s2));
-	ft_strlcat(nstr, s2, ft_strlen(s1) + ft_strlen(s2));
-	nstr[ft_strlen(s1) + ft_strlen(s2)] = '\0';
+	len1 = 0;
+	while (*s1)
+	{
+		nstr[len1] = *s1;
+		len1++;
+		s1++;
+	}
+	while (*s2)
+	{
+		nstr[len1] = *s2;
+		len1++;
+		s2++;
+	}
+	nstr[len1] = '\0';
 	return (nstr);
 }

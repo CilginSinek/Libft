@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/01 17:11:44 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/12 13:33:20 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 14:13:39 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,18 @@ Output:
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
+	size_t	new_len;
 
-	if (start == 0)
-	{
-		str = (char *)malloc(len + 1);
-		if (!str)
-			return ((char *) NULL);
-		ft_memcpy(str, s, len + 1);
-		return (str);
-	}
-	str = (char *)malloc(len - start + 1);
+	if (!s)
+		return (NULL);
+	new_len = ft_strlen(s) - start;
+	if (len < new_len)
+		new_len = len;
+	if (start > ft_strlen(s) - 1)
+		return (ft_strdup(""));
+	str = (char *)malloc(sizeof(char) * (new_len + 1));
 	if (!str)
-		return ((char *) NULL);
-	ft_memcpy(str, s + start, len);
-	str[len + 1] = '\0';
+		return (NULL);
+	ft_strlcpy(str, s + start, new_len + 1);
 	return (str);
 }
