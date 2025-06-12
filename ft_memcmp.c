@@ -27,11 +27,9 @@ Output:
 */
 size_t	ft_memcmp(const void *dest, const void *src, size_t n)
 {
-	const unsigned char	*p1;
-	const unsigned char	*p2;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
-	if (!dest && !src)
-		return (0);
 	p1 = (unsigned char *)dest;
 	p2 = (unsigned char *)src;
 	while (n--)
