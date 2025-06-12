@@ -17,7 +17,7 @@ int	strlenspc(const char *str)
 	int	len;
 
 	len = 0;
-	while (str[len] == ' ' || (str[len] > 6 && str[len] < 14))
+	while (str[len] == ' ' || (str[len] >= 9 && str[len] <= 13))
 		len++;
 	return (len);
 }
