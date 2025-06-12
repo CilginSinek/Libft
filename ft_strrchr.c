@@ -32,11 +32,11 @@ char	*ft_strrchr(const char *s, int c)
 		return (NULL);
 	len = ft_strlen(s);
 	if (c == '\0')
-		return ((char *)s + len);
+		return ((char *)(s + len + 1));
 	while (len--)
 	{
 		if ((unsigned char)s[len] == (unsigned char)c)
-			return ((char *)s + len);
+			return ((char *)(s + len));
 	}
 	return (NULL);
 }
