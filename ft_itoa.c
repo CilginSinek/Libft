@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:45:01 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/11 19:11:06 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/12 15:29:02 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,11 @@ char	*ft_itoa(int n)
 	if (n == 0)
 		return (ft_strdup("0"));
 	a = set_amblem(n);
-	len = counter(n) - 1;
-	str = (char *)malloc(len + 1);
+	len = counter(n);
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return ((char *) NULL);
-	str[len + 1] = '\0';
+	str[--len] = '\0';
 	while (n)
 	{
 		tmp = get_last_digit(n);
