@@ -6,13 +6,13 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 14:50:31 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/03 18:48:09 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/13 15:29:00 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	strlenspc(const char *str)
+static int	strlenspc(const char *str)
 {
 	int	len;
 
