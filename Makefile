@@ -10,16 +10,17 @@ BONUSOBJ = $(BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME):$(OBJ)
-	$(CC) $(FLAG) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 
 bonus:$(OBJ) $(BONUSOBJ)
-	$(CC) $(FLAG) -c $(SRC) $(BONUS)
 	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
+
 clean:
 	/bin/rm -f  $(OBJ) $(BONUSOBJ)
+
 fclean: clean
-	/bin/rm -f $(NAME) 
+	/bin/rm -f $(NAME)
+
 re: fclean all
 
 .PHONY: all bonus clean fclean re
