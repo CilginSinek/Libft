@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_lstmap_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:34:07 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/13 16:24:09 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/15 19:27:32 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,25 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
 	t_list	*tmp_lst;
-	t_list	*hold_lst;
+	void	*content;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	hold_lst = lst;
 	new_lst = NULL;
-	while (hold_lst)
+	while (lst)
 	{
-		tmp_lst = (t_list *)malloc(sizeof(t_list));
-		if (!tmp_lst)
+		content = f(lst->content);
+		tmp_lst = ft_lstnew(content);
+		if (!tmp_lst || !content)
 		{
+			if (content)
+				del(content);
+			else if (tmp_lst)
+				ft_lstdelone(tmp_lst, del);
 			ft_lstclear(&new_lst, del);
 			return (NULL);
 		}
-		tmp_lst->content = f(hold_lst->content);
-		if (!tmp_lst->content)
-			ft_lstdelone(tmp_lst, del);
-		hold_lst = hold_lst->next;
+		lst = lst->next;
 	}
 	return (new_lst);
 }
