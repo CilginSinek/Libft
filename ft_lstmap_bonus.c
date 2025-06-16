@@ -6,7 +6,7 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/13 15:34:07 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/15 19:37:58 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/16 13:36:33 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_node;
 
-	 if (!lst || !f)
+	if (!lst || !f)
 		return (NULL);
 	new_list = NULL;
 	while (lst)

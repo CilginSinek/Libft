@@ -6,6 +6,8 @@ CC = cc
 OBJ = $(SRC:.c=.o)
 BONUSOBJ = $(BONUS:.c=.o)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
