@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 static int	strlenspc(const char *str)
 {
 	int	len;

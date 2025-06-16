@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
 The tolower() function returns
 the ASCII value of a lowercase version of the character.

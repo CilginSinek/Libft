@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 /*
 The ft_toupper() function returns the ASCII value of
 an uppercase version of the character.
