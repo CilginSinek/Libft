@@ -6,12 +6,11 @@
 /*   By: iduman <iduman@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 19:45:39 by iduman            #+#    #+#             */
-/*   Updated: 2025/06/12 14:12:48 by iduman           ###   ########.fr       */
+/*   Updated: 2025/06/18 14:11:41 by iduman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 /*
 The ft_strjoin function concatenates two strings s1 and s2 into a new string.
