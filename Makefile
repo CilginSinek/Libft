@@ -18,10 +18,10 @@ bonus:$(OBJ) $(BONUSOBJ)
 	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
 
 clean:
-	/bin/rm -f  $(OBJ) $(BONUSOBJ)
+	$(RM) $(OBJ) $(BONUSOBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
